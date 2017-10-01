@@ -5,11 +5,13 @@ import { MaterializeModule } from 'ng2-materialize';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
