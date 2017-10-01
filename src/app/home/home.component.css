@@ -1,6 +1,6 @@
 .home {
   padding: 0 32px 0 32px;
-  height: 67vh;
+  height: 60vh;
   width: 100vw;
   display: flex;
   justify-content: space-around;
@@ -8,6 +8,6 @@
 }
 
 .card {
-  margin: 16px 8px 0 8px;
+  margin: 16px 4px 0 4px;
 }
 
