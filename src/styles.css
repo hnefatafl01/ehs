@@ -3,8 +3,11 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background: #42a5f5;
 }
 
 main {
   flex: 1 0 auto;
+  overflow-y: scroll;
 }
+
