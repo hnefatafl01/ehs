@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +21,8 @@ import { AnnouncementsComponent } from './announcements/announcements.component'
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterializeModule.forRoot()
+    MaterializeModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

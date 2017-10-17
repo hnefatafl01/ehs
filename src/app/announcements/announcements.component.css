@@ -1,0 +1,10 @@
+/* .center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.message-panel {
+    width: 100%;
+    margin: 0 0 0 0;
+}
