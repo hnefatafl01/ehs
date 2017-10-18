@@ -1,5 +1,6 @@
-import { AuthService } from './../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AuthService } from './../auth/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -12,4 +13,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() { }
 
+  onUpdateMessages(form: NgForm) {
+    
+  }
 }
