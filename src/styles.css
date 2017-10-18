@@ -11,4 +11,6 @@ main {
   overflow-y: scroll;
 }
 
-
+a {
+  outline: none;
+}

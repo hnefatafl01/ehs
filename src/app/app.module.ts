@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
 import { AdminComponent } from './admin/admin.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { AuthGuardService } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { AdminComponent } from './admin/admin.component';
     HomeComponent,
     FooterComponent,
     AnnouncementsComponent,
-    AdminComponent
+    AdminComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,7 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

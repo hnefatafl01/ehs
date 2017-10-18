@@ -1,3 +1,5 @@
+import { AuthGuardService } from './auth/auth-guard.service';
+import { SigninComponent } from './auth/signin/signin.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,9 +11,13 @@ import { AnnouncementsComponent } from './announcements/announcements.component'
 
 const appRoutes: Routes = [
   {
+    path: 'login',
+    component: SigninComponent
+  },
+  {
     path: 'admin',
     component: AdminComponent,
-    pathMatch: 'full'
+    canActivate: [AuthGuardService]
   },
   {
     path: '', component: HomeComponent, children: [
@@ -28,8 +34,9 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     // AppModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true })
+    RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+// , { enableTracing: true }

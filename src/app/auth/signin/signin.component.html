@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col s12 m4 offset-m4">
+      <div class="card-panel white">
+        <div class="row">
+          <form (ngSubmit)="onLogin(f)" #f="ngForm">
+                <div class="col s12">
+                  <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" name="email" ngModel required>
+                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                  </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                        <input id="password" type="password" class="validate" name="password" ngModel required>
+                        <label for="password">Password</label>
+                      </div>
+                    </div>
+                  <button type="submit" class="waves-effect waves-light btn blue blue-lighten-1 white-text">login</button>
+                </div>
+          </form>
+        </div>        
+      </div>
+    </div>
+  </div>
