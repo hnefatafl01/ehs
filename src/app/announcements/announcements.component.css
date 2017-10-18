@@ -8,3 +8,10 @@
     width: 100%;
     margin: 0 0 0 0;
 }
+
+.card-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
