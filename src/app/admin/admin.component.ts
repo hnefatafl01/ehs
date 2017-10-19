@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Announcement } from './../shared/announcement.model';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -10,20 +11,23 @@ import { DataService } from './../shared/data.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  announcements: Announcement[];
-  constructor(private authService: AuthService, private dataService: DataService) { }
+  announcements;
+  constructor(
+    private authService: AuthService,
+    private dataService: DataService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.dataService.getMessages().subscribe(
       (response) => {
-          this.announcements = response[Object.keys(response)[0]].slice();
-          console.log('admin init', this.announcements);
+          this.announcements = response;
       },
       (error) => {
           console.log(error);
       }
-  );
-   }
+    );
+  }
 
   onUpdateMessages(form: NgForm) {
     const announcement = {
@@ -35,11 +39,12 @@ export class AdminComponent implements OnInit {
     this.dataService.updateMessages(this.announcements)
       .subscribe(
         (response) => {
-          console.log('update announce', response);
+          return response;
       },
       (error) => {
         console.log(error);
       }
     );
+    this.router.navigate(['/']);
   }
 }

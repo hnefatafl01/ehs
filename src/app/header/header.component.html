@@ -5,11 +5,11 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="#" class="blue-text text-darken-1">Home</a></li>
           <li><a href="#" class="blue-text text-darken-1">About</a></li>
-          <ng-template *ngIf="authenticated">
+          <ng-template [ngIf]="authenticated">
             <li><a href="#" routerLink="/admin" class="blue-text text-darken-1">Manage Content</a></li>
           </ng-template>
-            <li><a (click)="onLogout()" href="#" class="blue-text text-darken-1">logout</a></li>
-            <li routerLink="/login"><i class="material-icons vertical-align blue-text text-darken-1">lock</i></li>
+            <li *ngIf="authenticated"><a (click)="onLogout()" href="#" class="blue-text text-darken-1">logout</a></li>
+            <li *ngIf="!authenticated" routerLink="/login"><i class="material-icons vertical-align blue-text text-darken-1">lock</i></li>
         </ul>
       </div>
     </nav>

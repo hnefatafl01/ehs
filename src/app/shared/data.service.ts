@@ -9,7 +9,6 @@ import { AuthService } from './../auth/auth.service';
 @Injectable()
 export class DataService {
     constructor(private http: HttpClient, private authService: AuthService) {}
-    body;
 
     updateMessages(updated) {
         const token = this.authService.getToken();
