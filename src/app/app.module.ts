@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { MaterializeModule } from 'ng2-materialize';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -14,15 +16,16 @@ import { AdminComponent } from './admin/admin.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
+import { DataService } from './shared/data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent,
     AnnouncementsComponent,
     AdminComponent,
+    FooterComponent,
     SigninComponent
   ],
   imports: [
@@ -30,9 +33,10 @@ import { AuthService } from './auth/auth.service';
     BrowserAnimationsModule,
     MaterializeModule.forRoot(),
     FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

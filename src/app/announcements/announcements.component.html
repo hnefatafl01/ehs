@@ -1,8 +1,12 @@
 <div class="row">
   <div class="message-panel center-align col s12 offset-m3 m6">
     <div class="card-panel white">
-      {{date}}
-      <span class="blue-text">{{message}}</span>
+      <div *ngFor="let announcement of announcements">
+        <span class="blue-text">
+          <h6>{{announcement.startDate}}-{{announcement.endDate}}</h6>
+          <p>{{announcement.message}}</p>
+        </span>
+      </div>
     </div>
   </div>
 </div>
