@@ -3,7 +3,7 @@
     <div class="card-panel white">
       <div *ngFor="let announcement of announcements">
         <span class="blue-text">
-          <h6>{{announcement.startDate}}-{{announcement.endDate}}</h6>
+          <h6>{{announcement.startDate | date:'mediumDate'}} - {{announcement.endDate | date:'mediumDate'}}</h6>
           <p>{{announcement.message}}</p>
         </span>
       </div>

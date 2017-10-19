@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './../shared/data.service';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-announcements',
@@ -11,10 +12,12 @@ export class AnnouncementsComponent implements OnInit {
 
   constructor(private dataService: DataService) {}
 
-
   ngOnInit() {
-    this.dataService.getMessages().subscribe((response) => {
-      this.announcements = response;
+    if (!this.announcements) {
+      this.announcements = [];
+    }
+    this.dataService.getMessages().subscribe((res) => {
+      this.announcements = res;
     });
   }
 }
