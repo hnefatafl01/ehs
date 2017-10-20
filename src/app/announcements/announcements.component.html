@@ -1,13 +1,15 @@
 <div class="row">
   <div class="message-panel center-align col s12 offset-m3 m6">
     <div class="card-panel white">
-      <h5>Announcements:</h5>
-      <div *ngFor="let announcement of announcements">
-        <span class="blue-text">
-          <h6>{{announcement.startDate | date:'mediumDate'}} - {{announcement.endDate | date:'mediumDate'}}</h6>
-          <p>{{announcement.message}}</p>
-        </span>
-      </div>
+      <a type="button" (click)="onPrevAnnouncement()"><i class="material-icons left">chevron_left</i></a>
+        <ng-template [ngIf]="announcement">
+          <span class="blue-text">
+            <h5 class="grey-text text-darken-4">Announcements:</h5> 
+            <h6>{{announcement.startDate | date:'mediumDate'}} - {{announcement.endDate | date:'mediumDate'}}</h6>
+            <p>{{announcement.message}}</p>
+          </span>
+        </ng-template>
+      <a type="button" (click)="onNextAnnouncement()"><i class="material-icons right">chevron_right</i></a>
     </div>
   </div>
 </div>

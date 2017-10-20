@@ -11,7 +11,21 @@
 
 .card-panel {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+}
+
+.card-panel-header {
+    align-self: flex-start;
+}
+
+.material-icons {
+    font-size: 60px;
+    color: #424242;
+}
+
+.material-icons:hover {
+    cursor: pointer;
+    color: #42a5f5;
 }
