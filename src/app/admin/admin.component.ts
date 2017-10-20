@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
-import { Announcement } from './../shared/announcement.model';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Announcement } from './../shared/announcement.model';
 import { AuthService } from './../auth/auth.service';
 import { DataService } from './../shared/data.service';
 
@@ -42,7 +42,6 @@ export class AdminComponent implements OnInit {
       .subscribe(
         (response) => {
           console.log(response);
-          // return response;
       },
       (error) => {
         console.log(error);
