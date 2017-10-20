@@ -11,6 +11,19 @@ export class DataService {
     constructor(private http: HttpClient, private authService: AuthService) {}
 
     updateMessages(updated) {
+        // const seed = [
+        //   {
+        //       message: 'Tutoring @ aurora public library 9am -3pm',
+        //       startDate: new Date(),
+        //       endDate: new Date()
+        //   },
+        //   {
+        //     message: 'coffee taste test',
+        //     startDate: new Date(),
+        //     endDate: new Date()
+        //   }
+        // ];
+        console.log(updated);
         const token = this.authService.getToken();
         const headers = new HttpHeaders({ 'Content-type': 'application/json' });
         return this.http.put<AnnouncementResponse>('https://ekberg-home-solutions.firebaseio.com/announcements.json',

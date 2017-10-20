@@ -11,29 +11,33 @@ import { AnnouncementsComponent } from './announcements/announcements.component'
 
 const appRoutes: Routes = [
   {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
+    children: [
+      { path: '', component: AnnouncementsComponent }
+    ]
+  },
+  // {
+  //     path: 'about',
+  //     component: AboutComponent
+  // }
+  {
     path: 'login',
-    component: SigninComponent
+    component: SigninComponent,
+    pathMatch: 'full'
   },
   {
     path: 'admin',
     component: AdminComponent,
-    canActivate: [AuthGuardService]
-  },
-  {
-    path: '', component: HomeComponent, children: [
-      { path: '', component: AnnouncementsComponent }
-    ]
+    canActivate: [AuthGuardService],
+    pathMatch: 'full'
   }
-  // {
-  //   path: 'about',
-  //   component: AboutComponent
-  // }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    // AppModule,
     RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule]

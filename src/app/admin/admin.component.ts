@@ -36,10 +36,13 @@ export class AdminComponent implements OnInit {
       endDate: form.value.endDate
     };
     this.announcements = [...this.announcements, announcement];
+    // const updated = Object.assign([], this.announcements).push(announcement);
+    console.log(this.announcements);
     this.dataService.updateMessages(this.announcements)
       .subscribe(
         (response) => {
-          return response;
+          console.log(response);
+          // return response;
       },
       (error) => {
         console.log(error);
