@@ -3,6 +3,6 @@
   min-height: 10vh;
 }
 
-li > a:hover {
-  color: #42a5f5;
+li a:hover {
+  color: #42a5f5!important;
 }
