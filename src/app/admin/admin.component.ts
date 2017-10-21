@@ -35,8 +35,7 @@ export class AdminComponent implements OnInit {
       startDate: form.value.startDate,
       endDate: form.value.endDate
     };
-    this.announcements = [...this.announcements, announcement];
-    // const updated = Object.assign([], this.announcements).push(announcement);
+    this.announcements = [ announcement, ...this.announcements];
     console.log(this.announcements);
     this.dataService.updateMessages(this.announcements)
       .subscribe(
@@ -47,6 +46,5 @@ export class AdminComponent implements OnInit {
         console.log(error);
       }
     );
-    this.router.navigate(['/']);
   }
 }
