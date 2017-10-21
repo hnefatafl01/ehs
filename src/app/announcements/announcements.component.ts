@@ -64,6 +64,7 @@ export class AnnouncementsComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck() {
+
   }
 
   onNextAnnouncement(e) {
