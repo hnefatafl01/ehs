@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { trigger, transition, state, style, animate } from '@angular/animations';
 import { Observable } from 'rxjs/Rx';
 
 import { Announcement } from './../shared/announcement.model';
@@ -10,28 +10,40 @@ import { DataService } from './../shared/data.service';
   templateUrl: './announcements.component.html',
   styleUrls: ['./announcements.component.css'],
   animations: [
-    trigger(
-      'slideInLeft',
-      [
-        transition(
-          ':enter', [
-            style({transform: 'translateX(100%)', opacity: 0}),
-            animate('500ms', style({transform: 'translateX(-100%)', opacity: 1}))
-          ]
-        ),
-        transition(
-          ':leave', [
-            style({transform: 'translateX(0)', 'opacity': 1}),
-            animate('300ms', style({transform: 'translateX(0)', opacity: 0}))
-          ]
-        )
-      ])
+    // trigger('forward', [
+    //   state('in', style({
+    //     opacity: 1,
+    //     transform: 'translateX(0)'
+    //   })),
+      // state('next', style({
+      //   opacity: 0,
+      //   transform: 'translateX(200px)'
+      // })),
+      // transition('in => next', [
+      //   animate('800ms ease')
+      // ])
+      // transition('* => void', [
+      //   animate(1000,
+      //     style({
+      //       opacity: 0,
+      //       transform: 'translateX(200px)'
+      //     })
+      //   )
+      // ]),
+      // transition('void => *', [
+      //   style({
+      //     opacity: 1,
+      //     transform: 'translateX(-200px)'
+      //   })
+      // ])
+    // ])
   ]
 })
-export class AnnouncementsComponent implements OnInit {
+export class AnnouncementsComponent implements OnInit, DoCheck {
   announcements;
   announcement?: Announcement;
   index = 0;
+
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
@@ -51,7 +63,10 @@ export class AnnouncementsComponent implements OnInit {
       );
   }
 
-  onNextAnnouncement() {
+  ngDoCheck() {
+  }
+
+  onNextAnnouncement(e) {
     if (this.index < this.announcements.length - 1) {
       this.index++;
     } else {
