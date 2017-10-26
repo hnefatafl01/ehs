@@ -1,20 +1,21 @@
-/* .center-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-.message-panel {
-    width: 100%;
-    margin: 0 0 0 0;
+.announcements {
+    margin: 16px 16px 0 16px;
 }
 
-.card-panel {
+.message-panel {
+    min-width: 300px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
+/* .card-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+} */
 
 .card-panel-header {
     align-self: flex-start;
@@ -31,5 +32,6 @@
 }
 
 .message {
+    max-width: 100%;
     overflow-wrap: break-word;
 }
