@@ -5,3 +5,39 @@ nav {
 .material-icons {
   outline: none;
 }
+
+.tagline-md {
+  display: inline-block;
+  position: relative;
+  font-size: 1.2em;
+  left: 35%;
+}
+
+/* .brand-logo {
+  display: inline-block;
+  position: relative;
+} */
+
+@media (max-width: 600px) {
+  .tagline-md {
+    display: fixed;
+    position: absolute;
+    top: 85%;
+  }
+
+  .nav-wrapper {
+    height: 2em!important;
+  }
+
+  .brand-logo {
+    display: block;
+    position: relative;
+    font-size: 1.2em;
+  }
+}
+
+@media screen {
+  .brand-logo { 
+    display: inline;
+  }
+}
