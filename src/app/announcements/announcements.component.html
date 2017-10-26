@@ -2,17 +2,20 @@
     <div class="row">
         <div class="message-panel center-align col s12">
           <!-- <div class="card-panel white"> -->
-            <a type="button" (click)="onPrevAnnouncement()"><i class="material-icons">chevron_left</i></a>
+            <div class="toggle-ctrl">
+              <a type="button" (click)="onPrevAnnouncement()"><i class="material-icons">chevron_left</i></a>
+              <a class="sm-view" type="button" (click)="onNextAnnouncement($event)"><i class="material-icons">chevron_right</i></a>
+            </div>
             <ng-template [ngIf]="announcement">
               <div class="main-content">
                 <span class="grey-text text-darken-2">
                   <h5 class="grey-text text-darken-4">Announcements:</h5>
                   <h6 >{{announcement.startDate | date:'mediumDate'}} - {{announcement.endDate | date:'mediumDate'}}</h6>
-                  <p class="truncate message">{{announcement.message}}</p>
+                  <p class="message">{{announcement.message}}</p>
                 </span>
               </div>
             </ng-template>
-            <a type="button" (click)="onNextAnnouncement($event)"><i class="material-icons">chevron_right</i></a>
+            <a class="md-view" type="button" (click)="onNextAnnouncement($event)"><i class="material-icons">chevron_right</i></a>
           <!-- </div> -->
         </div>
       </div>

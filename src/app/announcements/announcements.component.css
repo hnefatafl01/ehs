@@ -3,7 +3,6 @@
 }
 
 .message-panel {
-    min-width: 300px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -34,4 +33,35 @@
 .message {
     max-width: 100%;
     overflow-wrap: break-word;
+}
+
+.sm-view {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .message-panel {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .message {
+        overflow-wrap: break-word;
+    }
+
+    .md-view {
+        display: none;
+    }
+
+    .sm-view {
+        display: inline;
+    }
+
+    .toggle-ctrl {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 }
