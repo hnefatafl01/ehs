@@ -1,17 +1,44 @@
 <div class="navbar-fixed">
     <nav class="white">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo grey-text text-darken-4">Ekberg Home Solutions</a>
-        <h4 class="tagline-md grey-text text-darken-3">helping families develop supplemental income</h4>
+      <div class="">
+        <a href="#" class="brand-logo grey-text text-darken-4">Ekberg Home Solutions <span class="hide-on-med-and-down grey-text text-darken-3">helping families develop supplemental income</span></a>
+        <h4 class="tagline-sm hide-on-med-and-up grey-text text-darken-3">helping families develop supplemental income</h4>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#" class="blue-text text-darken-1">Home</a></li>
-          <li><a href="#" class="blue-text text-darken-1">About</a></li>
+          <li><a href="#" class="grey-text text-darken-1">home</a></li>
+          <li><a href="#" class="grey-text text-darken-1">about</a></li>
           <ng-template [ngIf]="authenticated">
-            <li><a href="#" routerLink="/admin" class="blue-text text-darken-1">Manage Content</a></li>
+            <li><a href="#" routerLink="/admin" class="grey-text text-darken-1">manage</a></li>
           </ng-template>
-          <li *ngIf="authenticated"><a (click)="onLogout()" href="#" class="blue-text text-darken-1">logout</a></li>
-          <li *ngIf="!authenticated" routerLink="/login"><i class="material-icons vertical-align blue-text text-darken-1">lock</i></li>
+          <li *ngIf="authenticated"><a (click)="onLogout()" href="#" class="grey-text text-darken-1">logout</a></li>
+          <li *ngIf="!authenticated" routerLink="/login"><a href="#" class="grey-text text-darken-1">admin</a></li>
         </ul>
+        <!-- <i class="mobile-dropdown material-icons vertical-align grey-text text-darken-1 hide-on-med-and-up">more_vert</i> -->
+        <mz-dropdown
+          class="hide-on-med-and-up"
+          [id]="'dropdown'"
+          [belowOrigin]="true"
+          [constrainWidth]="true"
+          [dropdownButtonId]="'btn-dropdown'"
+          [gutter]="false"
+          [hover]="false"
+          [inDuration]="300"
+          [outDuration]="300"
+          [stopPropagation]="true">
+          <mz-dropdown-item><a href="#" class="grey-text text-darken-1">home</a></mz-dropdown-item>
+          <mz-dropdown-item><a href="#" class="grey-text text-darken-1">about</a></mz-dropdown-item>
+          <ng-template [ngIf]="authenticated">
+            <mz-dropdown-item>
+              <a href="#" routerLink="/admin" class="grey-text text-darken-1">manage content</a>
+            </mz-dropdown-item>
+          </ng-template>
+          <ng-template [ngIf]="authenticated">
+            <mz-dropdown-item><a (click)="onLogout()" href="#" class="grey-text text-darken-1">logout</a></mz-dropdown-item>
+          </ng-template>
+          <ng-template [ngIf]="!authenticated">
+            <mz-dropdown-item><a href="#"  routerLink="/login" class="grey-text text-darken-1">login</a></mz-dropdown-item>
+          </ng-template>
+        </mz-dropdown>
+      <a mz-button class="show-on-medium-and-down hide-on-large-only" id="btn-dropdown" href="#"><i class="mobile-dropdown material-icons">more_vert</i></a>
       </div>
     </nav>
 </div>
