@@ -1,0 +1,25 @@
+.collection-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.actions {
+    margin-left: -20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.material-icons:hover {
+    /* color: #e57373!important; */
+    color: #212121!important;
+    transition: 0.3s ease;
+}

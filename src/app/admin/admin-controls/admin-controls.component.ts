@@ -17,4 +17,10 @@ export class AdminControlsComponent implements OnInit {
     });
   }
 
+  onRemoveItem(index: number) {
+    const updated = this.announcements.slice();
+    updated.splice(index, 1);
+    console.log(updated);
+    this.dataService.updateMessages(updated).subscribe(res => console.log(res));
+  }
 }
