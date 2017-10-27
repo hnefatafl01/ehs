@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { trigger, transition, state, style, animate } from '@angular/animations';
 import { Observable } from 'rxjs/Rx';
 
@@ -39,7 +39,7 @@ import { DataService } from './../shared/data.service';
     // ])
   ]
 })
-export class AnnouncementsComponent implements OnInit, DoCheck {
+export class AnnouncementsComponent implements OnInit, DoCheck, OnDestroy {
   announcements;
   announcement?: Announcement;
   index = 0;
@@ -50,21 +50,27 @@ export class AnnouncementsComponent implements OnInit, DoCheck {
     if (!this.announcements) {
       this.announcements = [];
     }
-    this.dataService.getMessages()
-      .subscribe(
-        (res) => {
-          this.announcements = res;
-          this.announcement = this.announcements[this.index];
-        },
-        (err) => { console.log('Error: ' + err); },
-        () => {
-          console.log('Completed init');
-        }
-      );
+    this.dataService.getMessages();
+    //   .subscribe(
+    //     (res) => {
+    //       this.announcements = res;
+    //       this.announcement = this.announcements[this.index];
+    //     },
+    //     (err) => { console.log('Error: ' + err); },
+    //     () => {
+    //       console.log('announcements completed init');
+    //     }
+    //   );
+    this.dataService.changedAnnouncements.subscribe((announcements: Announcement[]) => {
+      this.announcements = announcements;
+      this.announcement = this.announcements[this.index];
+    });
   }
 
-  ngDoCheck() {
+  ngDoCheck() {}
 
+  ngOnDestroy() {
+    // this.dataService.changedAnnouncements.unsubscribe();
   }
 
   onNextAnnouncement(e) {

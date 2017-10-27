@@ -1,5 +1,5 @@
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Announcement } from './../shared/announcement.model';
 import { AuthService } from './../auth/auth.service';
@@ -10,8 +10,9 @@ import { DataService } from './../shared/data.service';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent implements OnInit, OnDestroy {
   announcements;
+
   constructor(
     private authService: AuthService,
     private dataService: DataService,
@@ -19,14 +20,16 @@ export class AdminComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dataService.getMessages().subscribe(
-      (response) => {
-          this.announcements = response;
-      },
-      (error) => {
-          console.log(error);
-      }
-    );
+    this.dataService.getMessages();
+    this.dataService.changedAnnouncements
+      .subscribe(
+        (response) => {
+            this.announcements = response;
+        },
+        (error) => {
+            console.log(error);
+        }
+      );
   }
 
   onUpdateMessages(form: NgForm) {
@@ -35,16 +38,21 @@ export class AdminComponent implements OnInit {
       startDate: form.value.startDate,
       endDate: form.value.endDate
     };
-    this.announcements = [ announcement, ...this.announcements];
-    console.log(this.announcements);
-    this.dataService.updateMessages(this.announcements)
+    const announcements = [ announcement, ...this.announcements];
+    this.dataService.updateMessages(announcements);
+    this.dataService.changedAnnouncements
       .subscribe(
         (response) => {
-          console.log(response);
+          console.log('onUpdate', response);
+          this.announcements = response;
       },
       (error) => {
         console.log(error);
       }
     );
+  }
+
+  ngOnDestroy() {
+    // this.dataService.changedAnnouncements.unsubscribe();
   }
 }
