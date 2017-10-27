@@ -9,6 +9,10 @@
   margin: 8px 0 8px 0;
 }
 
+.card-reveal-content {
+  /* overflow-y: scroll; */
+}
+
 .card-reveal a {
   position: absolute;
   top: 90%;
@@ -16,4 +20,20 @@
   left: 24px;
   right: 24px;
   margin: auto;
+}
+
+.card-container {
+  margin: 16px;
+  padding-top: 16px;
+  height: 100%;
+}
+
+.row1 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.row2 {
+  margin-top: 0;
+  margin-bottom: 16px;
 }

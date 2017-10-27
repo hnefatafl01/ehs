@@ -1,5 +1,9 @@
 .announcements {
     margin: 16px 16px 0 16px;
+    height: 32vh!important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .message-panel {
@@ -40,6 +44,10 @@
 }
 
 @media (max-width: 600px) {
+    .announcements {
+        height: 400px;
+    }
+
     .message-panel {
         flex-direction: column;
         justify-content: center;
@@ -65,3 +73,9 @@
         justify-content: center;
     }
 }
+
+/* @media only screen and (max-width: 900px) and (min-width: 600px)  {
+    .announcements {
+        height: 100%!important;
+    }
+} */
