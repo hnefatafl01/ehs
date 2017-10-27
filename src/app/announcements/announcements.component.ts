@@ -51,16 +51,6 @@ export class AnnouncementsComponent implements OnInit, DoCheck, OnDestroy {
       this.announcements = [];
     }
     this.dataService.getMessages();
-    //   .subscribe(
-    //     (res) => {
-    //       this.announcements = res;
-    //       this.announcement = this.announcements[this.index];
-    //     },
-    //     (err) => { console.log('Error: ' + err); },
-    //     () => {
-    //       console.log('announcements completed init');
-    //     }
-    //   );
     this.dataService.changedAnnouncements.subscribe((announcements: Announcement[]) => {
       this.announcements = announcements;
       this.announcement = this.announcements[this.index];
