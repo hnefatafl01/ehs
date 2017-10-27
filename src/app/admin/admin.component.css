@@ -1,19 +1,27 @@
-.admin {
-    height: 52vh;
+.admin-container {
+    display: flex!important;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    height: 100%;
 }
 
 .card-panel {
-    height: 69vh;
+    height: 80%;
     margin: 16px 4px 16px 4px;
 }
 
-@media (max-width: 900px) {
-    .admin {
-        height: 58vh;
-    }  
+.admin-form {
+    order: 0;
+}
 
-    .card-panel {
-        height: 55vh!important;
-        margin: 16px 4px 16px 4px;
+.admin-list {
+    order: 1;
+}
+
+@media (max-width: 600px) {
+    .admin-form form{
+        width: 80vw;
     }
 }

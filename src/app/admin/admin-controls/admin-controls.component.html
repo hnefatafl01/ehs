@@ -1,15 +1,13 @@
-<div class="col s12 show-on-small-only">
-  <ul class="collection  with-header">
-    <li class="collection-header"><h5>Announcements</h5></li>
-    <li class="collection-item" *ngFor="let announcement of announcements; let i = index">
-      <div class="actions">
-        <a type="button" (click)="onRemoveItem(i)" class="left-align"><i class="material-icons red-text text-lighten-2">delete_forever</i></a>
-      </div>
-      <div class="content">
-        date: {{announcement.startDate | date:'mediumDate'}} - {{announcement.endDate | date:'mediumDate'}} 
-        <br>
-        message: {{announcement.message}}
-      </div>
-    </li>
-  </ul>
-</div>
+<ul class="collection with-header">
+  <li class="collection-header"><h5>Announcements</h5></li>
+  <li class="collection-item" *ngFor="let announcement of announcements; let i = index">
+    <div class="actions">
+      <a type="button" (click)="onRemoveItem(i)" class="left-align"><i class="material-icons red-text text-lighten-2">delete_forever</i></a>
+    </div>
+    <div class="content">
+      date: {{announcement.startDate | date:'mediumDate'}} - {{announcement.endDate | date:'mediumDate'}} 
+      <br>
+      message: {{announcement.message}}
+    </div>
+  </li>
+</ul>

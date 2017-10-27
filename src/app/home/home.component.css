@@ -3,14 +3,11 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  overflow-y: scroll;
 }
 
 .card {
   margin: 8px 0 8px 0;
-}
-
-.card-reveal-content {
-  /* overflow-y: scroll; */
 }
 
 .card-reveal a {
@@ -25,7 +22,6 @@
 .card-container {
   margin: 16px;
   padding-top: 16px;
-  height: 100%;
 }
 
 .row1 {

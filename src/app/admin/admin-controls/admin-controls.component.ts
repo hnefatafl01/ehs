@@ -1,6 +1,6 @@
 import { element } from 'protractor';
 import { DataService } from './../../shared/data.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-admin-controls',
@@ -13,7 +13,7 @@ export class AdminControlsComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getMessages().subscribe((response) => {
-       this.announcements = response;
+      this.announcements = response;
     });
   }
 

@@ -27,7 +27,6 @@ export class DataService {
             observe: 'body',
             responseType: 'json'
         }).map((res) => {
-            console.log(res);
             return res.filter(val => {
                 return val !== null;
             });
