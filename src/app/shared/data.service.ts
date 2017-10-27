@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
+import 'rxjs/add/operator/filter';
 
 import { Announcement } from './announcement.model';
 import { AuthService } from './../auth/auth.service';
@@ -22,9 +23,14 @@ export class DataService {
     }
 
     getMessages() {
-        return this.http.get<AnnouncementResponse>('https://ekberg-home-solutions.firebaseio.com/announcements.json', {
+        return this.http.get<any>('https://ekberg-home-solutions.firebaseio.com/announcements.json', {
             observe: 'body',
             responseType: 'json'
+        }).map((res) => {
+            console.log(res);
+            return res.filter(val => {
+                return val !== null;
+            });
         });
     }
 }

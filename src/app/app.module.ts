@@ -17,6 +17,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { DataService } from './shared/data.service';
+import { AdminControlsComponent } from './admin/admin-controls/admin-controls.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DataService } from './shared/data.service';
     AnnouncementsComponent,
     AdminComponent,
     FooterComponent,
-    SigninComponent
+    SigninComponent,
+    AdminControlsComponent
   ],
   imports: [
     BrowserModule,

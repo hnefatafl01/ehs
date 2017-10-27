@@ -1,3 +1,4 @@
+import { AdminControlsComponent } from './admin/admin-controls/admin-controls.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { SigninComponent } from './auth/signin/signin.component';
 import { NgModule } from '@angular/core';
@@ -31,7 +32,10 @@ const appRoutes: Routes = [
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuardService],
-    pathMatch: 'full'
+    pathMatch: 'full',
+    children: [
+      { path: '', component: AdminControlsComponent}
+    ]
   }
 ];
 
