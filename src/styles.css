@@ -55,17 +55,8 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   color: #42a5f5;
 }
 
-/* valid color */
-/* .input-field input[type=email].valid {
-  border-bottom: 1px solid #42a5f5;
-  box-shadow: 0 1px 0 0 #42a5f5;
-} */
-
 .page-footer {
   margin-bottom: 0;
-}
-
-body {
-  overflow-y: scroll;
+  position: sticky;
 }
 
