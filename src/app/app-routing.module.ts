@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './not-found/not-found.component';
 import { AdminControlsComponent } from './admin/admin-controls/admin-controls.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { SigninComponent } from './auth/signin/signin.component';
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     children: [
       { path: '', component: AdminControlsComponent}
     ]
-  }
+  },
+  { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

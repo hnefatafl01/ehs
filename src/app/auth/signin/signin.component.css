@@ -5,6 +5,7 @@
 .card-panel {
     height: 69vh;
     margin: 16px 4px 16px 4px;
+    padding-top: 10%;
 }
 
 @media (max-width: 900px) {

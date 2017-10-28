@@ -18,6 +18,7 @@ import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { DataService } from './shared/data.service';
 import { AdminControlsComponent } from './admin/admin-controls/admin-controls.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdminControlsComponent } from './admin/admin-controls/admin-controls.co
     AdminComponent,
     FooterComponent,
     SigninComponent,
-    AdminControlsComponent
+    AdminControlsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
