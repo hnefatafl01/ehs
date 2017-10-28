@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit, DoCheck {
 
   onLogout() {
     this.authService.logoutUser();
+    this.router.navigate(['/']);
   }
 
 }
