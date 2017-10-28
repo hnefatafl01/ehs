@@ -20,8 +20,11 @@
     order: 1;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1014px) {
     .admin-form form{
-        width: 80vw;
+        width: 90vw;
+    }
+    .card-panel {
+        height: 100%;
     }
 }

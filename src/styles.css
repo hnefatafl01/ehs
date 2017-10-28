@@ -60,3 +60,9 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   position: sticky;
 }
 
+.center {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
