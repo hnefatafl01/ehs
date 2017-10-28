@@ -21,7 +21,6 @@
 
 .card-container {
   margin: 16px;
-  padding-top: 16px;
 }
 
 .row1 {
@@ -32,4 +31,8 @@
 .row2 {
   margin-top: 0;
   margin-bottom: 16px;
+}
+
+div.col.s12.card-panel {
+  margin: 0;
 }
